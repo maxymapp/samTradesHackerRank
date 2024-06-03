@@ -29,7 +29,7 @@ router.get('/trades/:id', async function(req, res) {
 });
 
 /*
-* normally i would've created a nice looking "bucket"/catch-all handling for non supported http verbs but lack of time due to all routes 404'ing for me
+* normally i would've created a nice looking "bucket"/catch-all handling for non supported http verbs but didn't get around to it due to lack of time
 * */
 router.delete('/trades/:id', async function(req, res) {
         res.status(405).end()
@@ -40,10 +40,5 @@ router.put('/trades/:id', async function(req, res) {
 router.patch('/trades/:id', async function(req, res) {
     res.status(405).end()
 });
-
-
-router.get('/', function(req, res, next) {
-    res.send('<p> trades route test works (BUT all of these these routes 404 for me ) </p>');
-})
 
 module.exports = router;
